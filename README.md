@@ -1,3 +1,1 @@
-# Algorithm
-
-## with Python
+# Algorithm  ## with Python
