@@ -1,3 +1,7 @@
+"""
+에디터(2) - 최종
+"""
+
 import sys
 
 string = sys.stdin.readline().rstrip()

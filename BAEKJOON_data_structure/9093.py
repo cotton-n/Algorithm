@@ -1,3 +1,7 @@
+"""
+단어 뒤집기
+"""
+
 import sys
 
 n = int(sys.stdin.readline())

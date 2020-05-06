@@ -1,3 +1,7 @@
+"""
+에디터
+"""
+
 import sys
 import time
 

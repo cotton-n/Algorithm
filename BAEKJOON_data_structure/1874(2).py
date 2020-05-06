@@ -1,3 +1,7 @@
+"""
+스택 수열(2) - 최종
+"""
+
 import sys
 
 n = int(sys.stdin.readline())

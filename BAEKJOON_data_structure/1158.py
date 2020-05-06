@@ -1,3 +1,7 @@
+"""
+요세푸스 문제
+"""
+
 import sys
 
 n, k = map(int, sys.stdin.readline().split())

@@ -1,3 +1,7 @@
+"""
+단어 뒤집기2
+"""
+
 import sys
 
 string = sys.stdin.readline().rstrip()
