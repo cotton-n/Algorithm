@@ -4,7 +4,7 @@
 import sys
 
 n = int(sys.stdin.readline())
-numList = map(int, sys.stdin.readline().rstrip().split())
+numList = list(map(int, sys.stdin.readline().rstrip().split()))
 
 maxNum = max(numList)
 answer = []
