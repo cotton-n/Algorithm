@@ -7,7 +7,7 @@ import sys
 string = sys.stdin.readline().rstrip()
 string += ' '
 answer = []
-word = [] # stack
+word = []  # stack
 
 # 태그인지 아닌지를 판별할 수 있는 변수 
 flag = 0
