@@ -1,6 +1,6 @@
 # Algorithm with Python
-> Basic frame
-    
+> Basic Frame
+
     from sys import stdin
     
     def solve(n):
