@@ -1,20 +1,32 @@
+import queue
+
+
 def solution(bridge_length, weight, truck_weights):
     answer = 0
-    queue = [0] * bridge_length
+    q = queue.Queue()
+    truck = queue.Queue()
 
-    while queue:
+    for _ in range(bridge_length):
+        q.put(0)
+
+    for t in truck_weights:
+        truck.put(t)
+
+    total_weight = 0
+    while q.queue:
         answer += 1
-        # print('queue: ', queue)
-        # print('truck_weights: ', truck_weights)
-        queue.pop(0)
-        if truck_weights:
-            if sum(queue) + truck_weights[0] <= weight:
-                queue.append(truck_weights.pop(0))
+        total_weight -= q.get()
+        if truck.queue:
+            if total_weight + truck.queue[0] <= weight:
+                w = truck.get()
+                q.put(w)
+                total_weight += w
             else:
-                queue.append(0)
+                q.put(0)
 
     return answer
 
 
 if __name__ == "__main__":
     print(solution(2, 10, [7, 4, 5, 6]))
+    print(solution(100, 100, [10]))
