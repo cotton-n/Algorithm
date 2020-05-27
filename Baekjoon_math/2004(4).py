@@ -1,7 +1,7 @@
 """
 조합 0의 개수 - 검색
 0의 개수만 필요하다는 아이디어만 참고
-메모리초과
+시간 초과
 """
 import sys
 sysIn = sys.stdin.readline()
@@ -21,28 +21,31 @@ def count_twoFive(n):
     return [two, five]
 
 
-def factorial_twoFive(n):
-    two = 0
-    five = 0
+def factorial_twoFive(n, r):
+    two, five = 0, 0
+    two1, five1 = 0, 0
+    two2, five2 = 0, 0
+    two3, five3 = 0, 0
     for i in range(2, n+1):
         t, f = count_twoFive(i)
-        two += t
-        five += f
-        d[i] = [two, five]
+        two1 += t
+        five1 += f
+        if i <= r:
+            two2 += t
+            five2 += f
+        if i <= n-r:
+            two3 += t
+            five3 += f
+    two = two1 - (two2 + two3)
+    five = five1 - (five2 + five3)
     return [two, five]
 
 
 def solution(nums):
     answer = 0
     a, b = map(int, nums.split())
-    global d
-    d = [[-1, -1] for _ in range(a + 1)]
 
-    two1, five1 = factorial_twoFive(a)
-    two2, five2 = d[a-b]
-    two3, five3 = d[b]
-    two = two1 - (two2 + two3)
-    five = five1 - (five2 + five3)
+    two, five = factorial_twoFive(a, b)
     if two == 0 or five == 0:
         return 0
     else:
