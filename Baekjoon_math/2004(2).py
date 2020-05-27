@@ -1,18 +1,20 @@
 """
 조합 0의 개수(X)
-런타임 에러 - 재귀호출때문
+시간초과
 n, m(0≤m≤n≤2,000,000,000, n!=0)
-n = 2000000000 이거 대입해보면 됨
+n = 2000000000 때문
 """
 import sys
 sysIn = sys.stdin.readline()
 
 
 def factorial(x):
+    result = 1
     if x <= 1:
         return 1
-    else:
-        return x * factorial(x - 1)
+    for i in range(2, x+1):
+        result *= i
+    return result
 
 
 def permutation(n, r):
