@@ -1,5 +1,5 @@
 """
-ABCDE (컨닝)
+ABCDE - 검색
 """
 from sys import stdin
 

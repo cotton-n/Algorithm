@@ -1,8 +1,8 @@
 """
 스택 수열
+시간초과
 """
 
-# 시간초과
 import sys
 
 n = int(sys.stdin.readline())

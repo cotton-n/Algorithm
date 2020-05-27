@@ -1,5 +1,5 @@
 """
-ABCDE (스스로 해보기)
+ABCDE - 스스로
 """
 from sys import stdin
 
