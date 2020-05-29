@@ -1,29 +1,21 @@
-def dfs(graph, start_node):
-    visit = list()
-    stack = list()
-
-    stack.append(start_node)
-
-    while stack:
-        node = stack.pop()
-        if node not in visit:
-            visit.append(node)
-            stack.extend(graph[node])
-    return visit
-
-
 def solution(n, computers):
-    graph = {node: [] for node in range(n)}
+    answer = 0
+    visited = [0 for _ in range(n)]
 
-    for i, computer in enumerate(computers):
-        for j, conn in enumerate(computer):
-            if i != j and conn == 1:
-                graph[i].append(j)
+    def dfs(index):
+        visited[index] = 1
+        for nxt in range(n):
+            if visited[nxt] == 0 and computers[index][nxt] == 1:
+                dfs(nxt)
 
-    paths = map(sorted, [dfs(graph, node) for node in graph])
-
-    return len(set(["".join(map(str, path)) for path in paths]))
+    for i, v in enumerate(visited):
+        if v == 1:
+            continue
+        dfs(i)
+        answer += 1
+    return answer
 
 
 if __name__ == '__main__':
     print(solution(3, [[1, 1, 0], [1, 1, 0], [0, 0, 1]]))
+    print(solution(3, [[1, 1, 0], [1, 1, 1], [0, 1, 1]]))
