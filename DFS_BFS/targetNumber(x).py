@@ -1,5 +1,25 @@
+"""
+검색 + 시간복잡도 개선(sum)
+"""
+
+
 def solution(numbers, target):
     answer = 0
+    length = len(numbers)
+
+    def operator(total, idx):
+        if idx < length:
+            numbers[idx] *= 1
+            operator(total+numbers[idx], idx+1)
+
+            numbers[idx] *= -1
+            operator(total + numbers[idx], idx + 1)
+
+        elif total == target:
+            nonlocal answer
+            answer += 1
+
+    operator(0, 0)
 
     return answer
 
