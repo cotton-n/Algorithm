@@ -1,8 +1,3 @@
-"""
-검색 + 시간복잡도 개선(sum)
-"""
-
-
 def solution(numbers, target):
     answer = 0
     length = len(numbers)

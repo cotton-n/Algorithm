@@ -16,13 +16,19 @@ def isOneDiff(word1, word2, wordLength):
 def solution(begin, target, words):
     if target not in words:
         return 0
-    answer = []
-    wordLength = len(words)
-
-    for i in range(wordLength):
-        p
-
-
+    answer = 0
+    wordLength = len(begin)
+    queue = deque()
+    queue.append([begin, 0])
+    while queue:
+        w, c = queue.popleft()
+        if w == target:
+            answer = c
+            break
+        for word in words:
+            if isOneDiff(w, word, wordLength):
+                queue.append([word, c+1])
+                words.remove(word)
     return answer
 
 
