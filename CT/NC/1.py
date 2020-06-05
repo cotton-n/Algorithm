@@ -1,7 +1,6 @@
 def solution(compressed):
     answer = ""
     temp = []
-    stack = []
     s = ""
     size = 0
     flag = False
