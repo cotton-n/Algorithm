@@ -1,5 +1,5 @@
 # Algorithm with Python
-> Basic Frame
+> Frame
 
     from sys import stdin
 
