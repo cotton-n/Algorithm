@@ -1,6 +1,7 @@
 from collections import deque
 
 
+# 한 글자만 다른지 판단하는 함수
 def isOneDiff(word1, word2, wordLength):
     count = 0
     for i in range(wordLength):
