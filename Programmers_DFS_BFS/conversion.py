@@ -19,8 +19,8 @@ def solution(begin, target, words):
         return 0
     answer = 0
     wordLength = len(begin)
-    queue = deque()
-    queue.append([begin, 0])
+    queue = deque()  # deque 이용
+    queue.append([begin, 0])  # (단어, 변환횟수)
     while queue:
         w, c = queue.popleft()
         if w == target:
@@ -28,6 +28,7 @@ def solution(begin, target, words):
             break
         for word in words:
             if isOneDiff(w, word, wordLength):
+                # 한글자만 다를 때
                 queue.append([word, c+1])
                 words.remove(word)
     return answer
