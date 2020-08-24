@@ -19,3 +19,4 @@ if flag:
         print("descending")
 else:
     print("mixed")
+    
