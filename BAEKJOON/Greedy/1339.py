@@ -1,5 +1,5 @@
 """
-단어 수학
+단어 수학 - 보류
 """
 
 from sys import stdin
